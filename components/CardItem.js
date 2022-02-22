@@ -1,3 +1,4 @@
+import { urlFor } from 'lib/api';
 import Link from 'next/link';
 import { Image, Card, NavLink } from 'react-bootstrap';
 
@@ -20,10 +21,8 @@ const CardItem = ({ title, subtitle, image, date, author, slug }) => {
         </Card.Header>
         <div className="view overlay">
           <Card.Img
-            src={image}
+            src={urlFor(image).height(300).crop('center').fit('clip').url()}
             alt="Card image cap"
-            height={250}
-            width={250}
           />
         </div>
         <Card.Body>
