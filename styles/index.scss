@@ -256,6 +256,9 @@ body {
   .blog-detail-header {
     .lead {
       font-size: 17px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
     &-title {
