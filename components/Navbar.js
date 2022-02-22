@@ -12,10 +12,10 @@ const BlogNavbar = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link
+          <NavLink
             className="fj-navbar-item fj-navbar-link"
             href='/'>Home
-          </Nav.Link>
+          </NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
