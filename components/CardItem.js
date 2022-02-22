@@ -9,8 +9,8 @@ const CardItem = ({ title, subtitle, image, date, author }) => {
           <Image
             src={author?.avatar || 'https://via.placeholder.com/150'}
             className="rounded-circle mr-3"
-            height="50px"
-            width="50px"
+            height={50}
+            width={50}
             alt="avatar" />
           <div>
             <Card.Title className="font-weight-bold mb-1">{author?.name || 'Anonymous'}</Card.Title>
@@ -21,6 +21,8 @@ const CardItem = ({ title, subtitle, image, date, author }) => {
           <Card.Img
             src={image}
             alt="Card image cap"
+            height={250}
+            width={250}
           />
         </div>
         <Card.Body>

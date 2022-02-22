@@ -1,5 +1,5 @@
 import 'styles/globals.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/scss/bootstrap.scss';
 import 'styles/index.scss'
 
 function MyApp({ Component, pageProps }) {
