@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.0.0",
+    "@fortawesome/react-fontawesome": "^0.1.17",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.1.0",
     "@sanity/image-url": "^1.0.1",
@@ -18,7 +20,8 @@
     "react": "17.0.2",
     "react-bootstrap": "^2.1.2",
     "react-dom": "17.0.2",
-    "sass": "^1.49.8"
+    "sass": "^1.49.8",
+    "swr": "^1.2.2"
   },
   "devDependencies": {
     "eslint": "8.9.0",

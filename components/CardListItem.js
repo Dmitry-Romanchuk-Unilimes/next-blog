@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Image, Card, NavLink } from 'react-bootstrap';
 
-const CardListItem = ({ title, subtitle, image, date, author, slug }) => {
+const CardListItem = ({ title, subtitle, date, author, slug }) => {
   return (
     <Card className={`fj-card fj-card-list`}>
       <div className="card-body-wrapper">
