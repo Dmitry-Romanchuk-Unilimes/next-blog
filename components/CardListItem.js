@@ -8,19 +8,19 @@ const CardListItem = ({ title, subtitle, image, date, author, slug }) => {
         <Card.Header
           className="d-flex flex-row">
           <Image
-            src={'https://via.placeholder.com/150'}
+            src={author?.avatar || 'https://via.placeholder.com/150'}
             className="rounded-circle mr-3"
             height="50px"
             width="50px"
             alt="avatar" />
           <div>
-            <Card.Title className="font-weight-bold mb-1">Placeholder Author</Card.Title>
-            <Card.Text className="card-date">Placeholder Date</Card.Text>
+            <Card.Title className="font-weight-bold mb-1">{author?.name || 'Anonymous'}</Card.Title>
+            <Card.Text className="card-date">{date}</Card.Text>
           </div>
         </Card.Header>
         <Card.Body>
-          <Card.Title className="card-main-title">Placeholder Title</Card.Title>
-          <Card.Text>Placehodler Subtitle</Card.Text>
+          <Card.Title className="card-main-title">{title}</Card.Title>
+          <Card.Text>{subtitle}</Card.Text>
         </Card.Body>
       </div>
       {

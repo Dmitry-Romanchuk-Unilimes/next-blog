@@ -1,13 +1,28 @@
 import PageLayout from 'components/PageLayout';
-import { useRouter } from 'next/router';
+import { getAllBlogs, getBlogBySlug } from 'lib/api';
 
-const BlogDetail = () => {
-  const { query } = useRouter();
+const BlogDetail = ({ blog }) => {
   return (
     <PageLayout>
-      <h1>Hello detail page - {query?.slug}</h1>
+      <h1>Hello detail page - {blog.slug}</h1>
     </PageLayout>
   )
+}
+
+export async function getStaticProps({ params }) {
+  const blog = await getBlogBySlug(params.slug);
+  return {
+    props: { blog }
+  }
+}
+
+export async function getStaticPaths() {
+  const blogs = await getAllBlogs();
+  const paths = blogs?.map(b => ({ params: { slug: b.slug } }));
+  return {
+    paths,
+    fallback: false
+  }
 }
 
 export default BlogDetail;
