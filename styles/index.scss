@@ -8,7 +8,7 @@ body {
   background-color: #f4f7f9;
 }
 
-.clickable {
+.clickable:hover {
   cursor: pointer;
 }
 
@@ -59,6 +59,7 @@ body {
 
   .card-main-title {
     font-size: 22px;
+    height: 60px;
   }
 
   .card-header {
@@ -152,15 +153,17 @@ body {
   width: 100%;
   padding: 20px 0px;
 
+
   .fj-navbar {
     &-brand {
-      color: black;
+      // color: black;
       font-size: 24px;
       text-transform: uppercase;
       letter-spacing: 1px;
+      font-weight: bold;
 
       a {
-        color: #000;
+        // color: black;
         font-weight: 900;
       }
     }
@@ -251,11 +254,17 @@ body {
   &-left {
     float: left;
     margin-right: 30px;
+    max-width: 50%;
   }
 
   &-right {
     float: right;
     margin-left: 30px;
+    max-width: 50%;
+  }
+
+  >img {
+    max-width: 100%;
   }
 }
 
@@ -270,9 +279,6 @@ body {
   .blog-detail-header {
     .lead {
       font-size: 17px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
     }
 
     &-title {
@@ -287,6 +293,79 @@ body {
   }
 }
 
+
+.dark {
+  .card.fj-card {
+    background-color: #232129;
+    transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
+
+    .card-body-wrapper {
+      background-color: #232129;
+      transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
+    }
+
+    .card-button {
+      background-color: #9b5f5f;
+    }
+  }
+
+  .fj-navbar.fj-nav-base {
+    width: 100%;
+    padding: 20px 0px;
+
+    .fj-navbar {
+      &-brand {
+        // color: #ffffff;
+      }
+
+      &-link {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.day-night-toggle.react-toggle {
+  &.react-toggle--checked:hover {
+    &:not(.react-toggle--disabled) .react-toggle-track {
+      background-color: black;
+    }
+  }
+
+  .react-toggle-thumb {
+    border-color: #000;
+  }
+
+  .react-toggle-track {
+    background-color: black;
+
+    &:hover {
+      background-color: black;
+    }
+
+    &-x,
+    &-check {
+      right: 8px;
+      width: 15px;
+      height: 15px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.page-footer {
+  padding: 40px;
+  font-size: 20px;
+  text-align: center;
+
+  a {
+    color: #63696e;
+  }
+}
 
 .dark {
   .card.fj-card {
@@ -326,6 +405,10 @@ body {
     }
   }
 
+  .react-toggle-thumb {
+    border-color: black;
+  }
+
   .react-toggle-track {
     background-color: black;
 
@@ -347,20 +430,34 @@ body {
   }
 }
 
-.page-footer {
-  padding: 40px;
-  font-size: 20px;
-  text-align: center;
+.view.overlay {
+  height: 150px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
 
-  a {
-    color: #63696e;
+  >img {
+    object-fit: cover;
+    height: 100%;
   }
+}
+
+
+blockquote {
+  position: relative;
+  color: #999;
+  font-size: 1.25em;
+  font-family: Georgia, Times New Roman, Times, serif;
+  font-style: italic;
+  margin: 0;
+  padding: .5em .5em .5em 0.5em;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-origin: border-box;
+  background-size: 2em;
 }
 
 .mr-3 {
   margin-right: 15px;
-}
-
-.full-width-card {
-  width: 100%;
 }
