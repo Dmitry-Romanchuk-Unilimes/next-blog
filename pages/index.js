@@ -8,7 +8,7 @@ import { useGetBlogsPages } from 'actions/pagination';
 
 
 export default function Home({ blogs }) {
-  const [filter, setFilter] = useState({ view: { list: 0 } });
+  const [filter, setFilter] = useState({ view: { list: 0 }, date: { asc: 0 } });
 
   const { pages, isLoadingMore, isReachingEnd, loadMore } = useGetBlogsPages({ blogs, filter });
 
@@ -30,7 +30,7 @@ export default function Home({ blogs }) {
 }
 
 export async function getStaticProps() {
-  const blogs = await getAllBlogs({ offset: 0 });
+  const blogs = await getAllBlogs({ offset: 0, date: 'desc' });
   return {
     props: {
       blogs

@@ -1,15 +1,24 @@
 import { useGetBlogs } from 'actions';
 import CardItem from 'components/CardItem';
 import CardListItem from 'components/CardListItem';
+import { useEffect } from 'react';
 import { Col } from 'react-bootstrap';
 import { useSWRPages } from 'swr'
 
 export const useGetBlogsPages = ({ blogs, filter }) => {
+  useEffect(() => {
+    window.__pagination__init = true;
+  }, []);
+
   return useSWRPages('index-page', ({ offset, withSWR }) => {
     let initialData = !offset && blogs;
 
+    if (typeof window !== 'undefined' && window.__pagination__init) {
+      initialData = null;
+    }
+
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { data: paginatedBlogs } = withSWR(useGetBlogs({ offset }, initialData));
+    const { data: paginatedBlogs } = withSWR(useGetBlogs({ offset, filter }, initialData));
 
     if (!paginatedBlogs) return 'Loading...';
 
