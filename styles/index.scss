@@ -38,6 +38,10 @@ body {
     z-index: 2;
     padding: 20px;
     padding-bottom: 40px;
+
+    &.no-image {
+      min-height: auto;
+    }
   }
 
   .card-body {
@@ -355,4 +359,8 @@ body {
 
 .mr-3 {
   margin-right: 15px;
+}
+
+.full-width-card {
+  width: 100%;
 }
