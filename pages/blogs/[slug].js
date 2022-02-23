@@ -4,8 +4,24 @@ import PageLayout from 'components/PageLayout';
 import { getAllBlogs, getBlogBySlug, urlFor } from 'lib/api';
 import { Col, Row } from 'react-bootstrap';
 import moment from 'moment'
+import { useRouter } from 'next/router';
+import ErrorPage from 'next/error';
 
 const BlogDetail = ({ blog }) => {
+  const router = useRouter();
+
+  if (!router.isFallback && !blog?.slug) {
+    return <ErrorPage statusCode='404' />
+  }
+
+  if (router.isFallback) {
+    return (
+      <PageLayout className="blog-detail-page">
+        Loading...
+      </PageLayout>
+    );
+  }
+
   return (
     <PageLayout className="blog-detail-page">
       <Row>
@@ -37,7 +53,7 @@ export async function getStaticPaths() {
   const paths = blogs?.map(b => ({ params: { slug: b.slug } }));
   return {
     paths,
-    fallback: false
+    fallback: true
   }
 }
 
